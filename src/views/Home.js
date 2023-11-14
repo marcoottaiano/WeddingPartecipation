@@ -46,7 +46,6 @@ function Home() {
           </svg>
         </section>
         <section id='invite-section'>
-          <div className='bg-overlay' />
           <div className='text-container'>
             <h1>
               Festeggiamo!
