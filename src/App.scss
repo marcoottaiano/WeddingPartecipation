@@ -33,11 +33,6 @@ img {
   height: auto;
 }
 
-@font-face {
-  font-family: 'FrankRuhlLibre-Regular';
-  src: url('./assets/font/FrankRuhlLibre-Regular.ttf');
-}
-
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
   // border-radius: 10px;
