@@ -172,7 +172,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-direction: column;
 
     h1 {
@@ -183,6 +183,24 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
 
     h3 {
       font-size: 20px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .text-container {
+      gap: 35px;
+
+      h1 {
+        font-size: 70px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+
+      h3 {
+        font-size: 30px;
+      }
     }
   }
 
