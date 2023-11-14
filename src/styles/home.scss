@@ -21,14 +21,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   src: url('../assets/fonts/PlayfairDisplay-Regular.ttf');
 }
 
-.bg-overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  opacity: 0.6;
-  z-index: 2;
-  position: absolute;
-}
+
 
 #landing-section {
   width: 100vw;
@@ -37,6 +30,15 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  .bg-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    position: absolute;
+  }
 
   .title-container {
     display: flex;
@@ -165,6 +167,15 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
+  .bg-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.4;
+    z-index: 2;
+    position: absolute;
+  }
+
   .text-container {
     position: relative;
     z-index: 3;
@@ -174,11 +185,14 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
     align-items: center;
     gap: 20px;
     flex-direction: column;
+    color: #6869AA;
+    text-shadow: 1px 1px 2px #999999;
 
     h1 {
       padding-bottom: 10px;
       font-weight: bold;
       font-size: 40px;
+      letter-spacing: 4px;
     }
 
     h3 {
