@@ -1,4 +1,5 @@
 $homepage: url('../assets/images/sfondo.jpg');
+$homepage-vert: url('../assets/images/sfondo-vert.jpg');
 
 $primary: #D8D5F2;
 $secondary: #E8E7EA;
@@ -12,7 +13,7 @@ $tertiary: #cfc36f;
 #landing-section {
   width: 100vw;
   height: 100vh;
-  background-image: $homepage;
+  background-image: $homepage-vert;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -114,6 +115,11 @@ $tertiary: #cfc36f;
     z-index: 3;
     top: 30px;
     right: 30px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    background-image: $homepage;
+    background-position: top;
   }
 
   @include media-breakpoint-up(lg) {
