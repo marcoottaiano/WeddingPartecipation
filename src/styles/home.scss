@@ -1,9 +1,15 @@
 $homepage: url('../assets/images/sfondo.jpg');
 $homepage-vert: url('../assets/images/sfondo-vert.jpg');
+$carta: url('../assets/images/carta.jpg');
 
 @font-face {
   font-family: 'AlexBrush-Regular';
   src: url('../assets/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'GreatVibes-Regular';
+  src: url('../assets/fonts/GreatVibes-Regular.ttf');
 }
 
 @font-face {
@@ -21,6 +27,8 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   src: url('../assets/fonts/PlayfairDisplay-Regular.ttf');
 }
 
+$primary-font: 'GreatVibes-Regular';
+$secondary-font: 'CormorantGaramond-Regular';
 
 
 #landing-section {
@@ -30,6 +38,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 
   .bg-overlay {
     width: 100vw;
@@ -48,7 +57,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
     text-align: center;
     height: 100vh;
     width: 100vw;
-    font-family: 'AlexBrush-Regular', sans-serif;
+    font-family: $primary-font, sans-serif;
     letter-spacing: 10px;
     color: $secondary;
     position: absolute;
@@ -158,7 +167,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   flex-direction: column;
   text-align: center;
   padding: 0 15px;
-  font-family: 'CormorantGaramond-Regular', serif;
+  font-family: $secondary-font, serif;
   width: 100vw;
   height: 100vh;
 
@@ -166,6 +175,7 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 1px 1px 10px rgba(49, 47, 46, 0.5);
 
   .bg-overlay {
     width: 100vw;
@@ -194,10 +204,6 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
       font-size: 40px;
       letter-spacing: 4px;
     }
-
-    h3 {
-      font-size: 20px;
-    }
   }
 
   @include media-breakpoint-up(lg) {
@@ -211,11 +217,35 @@ $homepage-vert: url('../assets/images/sfondo-vert.jpg');
       h2 {
         font-size: 35px;
       }
-
-      h3 {
-        font-size: 30px;
-      }
     }
   }
 
+}
+
+#location-section {
+  background-image: $carta;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  // height: 70vh;
+  padding: 30px 10px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  h1 {
+    font-size: 45px;
+    text-align: center;
+    font-family: $primary-font, serif;
+  }
+
+  p {
+    padding: 0 20px;
+    text-align: justify;
+    font-family: $secondary-font, serif;
+    font-size: 20px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from '../components/Map'
 
 function Home() {
   return (
@@ -49,21 +50,23 @@ function Home() {
           <div className='bg-overlay' />
           <div className='text-container'>
             <h1>
-              Festeggiamo!
+              Ci sposiamo!
             </h1>
             <h2>
-              Siamo lieti di invitarvi al nostro matrimonio,
+              Siamo lieti di invitarvi al nostro matrimonio
               l'8 giugno 2024 presso Antica Villa Castelli a Gubbio.
             </h2>
             <h2>
               La cerimonia inizierà alle ore 11:30.
               Seguiranno i festeggiamenti!
             </h2>
-            <h3>
-              Motivo: Fiori di lavanda e rose bianche.
-            </h3>
           </div>
 
+        </section>
+        <section id='location-section'>
+          <h1 className=''>Come arrivare</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <Map />
         </section>
       </body>
     </>

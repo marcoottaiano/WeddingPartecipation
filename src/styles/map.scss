@@ -1,0 +1,13 @@
+.map-container {
+  width: 100%;
+  height: 60vh;
+  z-index: 2;
+  box-shadow: 1px 1px 10px rgba(49, 47, 46, 0.5);
+}
+
+@include media-breakpoint-down(sm) {
+  .map-container {
+    height: 40vh;
+    width: 100%;
+  }
+}
