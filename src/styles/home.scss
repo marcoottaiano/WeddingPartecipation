@@ -300,7 +300,8 @@ body {
 
     ul {
       list-style-type: none;
-      padding: 0 10px !important;
+      padding-left: 0 !important;
+      box-shadow: 1px 1px 10px rgba(49, 47, 46, 0.5);
 
       li:nth-child(1) {
         background: $primary;
@@ -339,6 +340,7 @@ body {
       padding: 10px;
       overflow: auto;
       color: $primary;
+      width: 100%;
 
       p {
         font-size: 15px;
