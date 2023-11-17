@@ -64,9 +64,55 @@ function Home() {
 
         </section>
         <section id='location-section'>
-          <h1 className=''>Come arrivare</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <Map />
+          <h1>Come arrivare</h1>
+          <hr className='divider' />
+          <div className='map-box'>
+            <p>Antica Villa Castelli si trova a pochi minuti dal centro storico di Gubbio.<br /> É facilmente raggiungibile in macchina.</p>
+            <Map />
+          </div>
+        </section>
+        <section id='accomodation-section'>
+          <h1>Pernottamento</h1>
+          <hr className='divider' />
+          <div className='accomodation-box'>
+            <p className='description'>
+              Per chi ha necessità di pernottamento vi proponiamo le seguenti strutture convezionate
+            </p>
+            <ul>
+              <li>
+                <a href='https://www.relaisducale.com/'>
+                  <img src="https://www.relaisducale.com/wp-content/uploads/2019/03/relais-ducale-hotel-slider02.jpg" />
+                  <h3>Hotel Relais Ducale</h3>
+                  <p>Un hotel 4 stelle nel centro storico di Gubbio, dove convivono tradizione e comfort moderno.
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.hotelbosone.com/'>
+                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/e9/13/45/retro-dell-albergo-da.jpg?w=700&h=-1&s=1" />
+                  <h3>Hotel Bosone Palace</h3>
+                  <p>All'Hotel Bosone Palace il soggiorno nel centro storico di Gubbio diventa arte dell'accoglienza.</p>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.tenutadifassia.it/'>
+                  <img src="https://www.tenutadifassia.it/wp-content/uploads/elementor/thumbs/agriturismo-tenuta-di-fassia-3-_-q4imo1oluapqolb9w5v2838gropr1wbaxulh10b0jk.jpeg" />
+                  <h3>Tenuta di Fassia</h3>
+                  <p>Un viaggio in armonia con la natura, dove apprezzerete pace assoluta e esperienze indimenticabili.</p>
+                </a>
+              </li>
+              <li>
+                <a href='https://fontechiara.umbria.it/'>
+                  <img src="https://fontechiara.umbria.it/wp-content/uploads/2021/05/fonte-chiara-struttura2-1-1024x537.jpg" />
+                  <h3>Agriturismo Fonte Chiara</h3>
+                  <span>Un angolo tranquillo e incontaminato, adagiato sulle  colline umbre.</span>
+                </a>
+              </li>
+            </ul>
+            <p className='description'>
+              Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate.
+            </p>
+          </div>
         </section>
       </body>
     </>

@@ -30,6 +30,17 @@ $carta: url('../assets/images/carta.jpg');
 $primary-font: 'GreatVibes-Regular';
 $secondary-font: 'CormorantGaramond-Regular';
 
+body {
+  background-image: $carta;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.divider {
+  width: 70vw;
+  margin: 0 auto 20px auto;
+}
 
 #landing-section {
   width: 100vw;
@@ -223,18 +234,8 @@ $secondary-font: 'CormorantGaramond-Regular';
 }
 
 #location-section {
-  background-image: $carta;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   width: 100vw;
-  // height: 70vh;
   padding: 30px 10px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
 
   h1 {
     font-size: 45px;
@@ -242,10 +243,114 @@ $secondary-font: 'CormorantGaramond-Regular';
     font-family: $primary-font, serif;
   }
 
-  p {
-    padding: 0 20px;
-    text-align: justify;
+  .map-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      padding: 0 20px;
+      text-align: justify;
+      font-family: $secondary-font, serif;
+      font-size: 20px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    h1 {
+      font-size: 70px;
+    }
+
+    .map-box {
+      padding: 20px 5vw;
+
+      p {
+        text-align: center;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+#accomodation-section {
+  width: 100vw;
+  padding: 15px 10px;
+
+  h1 {
+    font-size: 45px;
+    text-align: center;
+    font-family: $primary-font, serif;
+  }
+
+  .accomodation-box {
     font-family: $secondary-font, serif;
-    font-size: 20px;
+
+    .description {
+      padding: 0 20px;
+      // text-align: justify;
+      font-size: 20px;
+
+      span {
+        border-bottom: 1px solid;
+        /* Modifica lo spessore dell'underline come desiderato */
+        display: inline;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0 10px !important;
+
+      li:nth-child(1) {
+        background: $primary;
+        color: $secondary;
+      }
+
+      li:nth-child(1):hover {
+        background: darken($primary, 20%);
+      }
+
+      li:nth-child(3) {
+        background: $primary;
+        color: $secondary;
+      }
+
+      li:nth-child(3):hover {
+        background: darken($primary, 20%);
+      }
+
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      float: left;
+      margin: 0 15px 0 0;
+      object-fit: cover;
+    }
+
+    li {
+      padding: 10px;
+      overflow: auto;
+      color: $primary;
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+
+    }
+
+    li:hover {
+      background: darken($secondary, 20%);
+      cursor: pointer;
+    }
   }
 }
