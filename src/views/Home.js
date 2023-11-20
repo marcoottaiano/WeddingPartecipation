@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Map from '../components/Map'
 import Header from '../components/Header'
+import { Button, FloatingLabel, Form } from 'react-bootstrap'
+import { cloneDeep } from 'lodash'
 
 function Home() {
+
+  const [form, setForm] = useState({
+    name: null,
+    surname: null,
+    phone: null,
+    confirmation: null,
+    menu: null,
+    notes: null
+  });
+
+  function handleOnChange(evt) {
+    const newState = cloneDeep(form);
+    if (evt.target.name !== 'phone' || (evt.target.name === 'phone' && evt.target.value.length <= 10)) {
+      newState[evt.target.name] = evt.target.value;
+    }
+    setForm(newState)
+  }
+
+  function handleRadioChange(name, value) {
+    const newState = cloneDeep(form);
+    newState[name] = value;
+    setForm(newState);
+  }
+
+  useEffect(() => { console.log(form); }, [form]);
+
   return (
     <>
-
       <body>
         <section id='landing-section'>
           <Header />
@@ -126,6 +153,97 @@ function Home() {
               Intestato a Leonardo Lispi
             </p>
           </div>
+        </section>
+        <section id='rsvp-section'>
+          <h1>Conferma la tua presenza</h1>
+          <hr className='divider' />
+          <form className=''>
+            <FloatingLabel
+              label="Nome"
+              className="floating-field">
+              <Form.Control
+                type="text"
+                placeholder=""
+                name='name'
+                className='text-capitalize'
+                onChange={handleOnChange}
+                value={form.name}
+              />
+            </FloatingLabel>
+            <FloatingLabel
+              label="Cognome"
+              className="floating-field">
+              <Form.Control
+                type="text"
+                placeholder=""
+                name='surname'
+                className='text-capitalize'
+                onChange={handleOnChange}
+                value={form.surname}
+              />
+            </FloatingLabel>
+            <FloatingLabel
+              label="Numero di telefono"
+              className="floating-field">
+              <Form.Control
+                type="number"
+                placeholder=""
+                name='phone'
+                onChange={handleOnChange}
+                value={form.phone}
+              />
+            </FloatingLabel>
+            <Form.Check
+              type='radio'
+              label={`Ci saró con piacere`}
+              className='mt-3'
+              name='confirmation'
+              onChange={() => handleRadioChange('confirmation', true)}
+            />
+            <Form.Check
+              type='radio'
+              label={`Mi dispiace non potró essere presente`}
+              name='confirmation'
+              onChange={() => handleRadioChange('confirmation', false)}
+            />
+            <h3 className='mt-3'>Menu:</h3>
+            <Form.Check
+              type='radio'
+              label={`Tradizionale`}
+              name='menu'
+              onChange={() => handleRadioChange('menu', true)}
+            />
+            <Form.Check
+              type='radio'
+              label={`Vegetariano`}
+              name='menu'
+              onChange={() => handleRadioChange('menu', false)}
+            />
+            <h3 className='mt-3 text-center'>In caso di intolleranze e/o allergie fatecelo sapere nel box di seguito:</h3>
+            <FloatingLabel
+              label=""
+              className="floating-field textarea"
+            >
+              <Form.Control
+                as="textarea"
+                placeholder="Note"
+                rows={4}
+                className='text-capitalize'
+                name='notes'
+                onChange={handleOnChange}
+                value={form.notes}
+              />
+            </FloatingLabel>
+            <Button
+              variant='primary'
+              className='button-text mt-4 mb-4'
+              size='lg'
+              disabled={!form.name || !form.surname || !form.phone || form.confirmation === null || form.menu === null}
+            // onClick={handleOnSubmit}
+            >
+              Invia
+            </Button>
+          </form>
         </section>
       </body>
     </>

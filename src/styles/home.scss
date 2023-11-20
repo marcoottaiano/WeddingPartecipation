@@ -440,3 +440,58 @@ body {
     }
   }
 }
+
+#rsvp-section {
+  width: 100vw;
+  padding: 30px 10px;
+
+  h1 {
+    font-size: 45px;
+    text-align: center;
+    font-family: $primary-font, serif;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    font-family: $secondary-font, serif;
+
+    .floating-field {
+      width: 100%;
+      font-size: 18px;
+      text-align: center;
+      color: black;
+
+      .form-control {
+        border-radius: 20px;
+        border: 1px solid #999999;
+        outline: none;
+        font-size: 25px;
+        height: 70px;
+        padding-left: 20px;
+      }
+    }
+
+    .form-check {
+      align-self: start;
+      font-size: 20px;
+    }
+
+    h3 {
+      font-family: $primary-font;
+      font-size: 30px;
+    }
+
+    .textarea {
+      height: 100px;
+
+      .form-control {
+        font-size: 18px;
+      }
+    }
+  }
+}

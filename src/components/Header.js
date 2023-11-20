@@ -30,7 +30,7 @@ function Header() {
               <a href="#travel-section">Lista di nozze</a>
             </li>
             <li>
-              <a href="">RSVP</a>
+              <a href="#rsvp-section">RSVP</a>
             </li>
           </ul>
         </div>
