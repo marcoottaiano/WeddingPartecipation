@@ -105,12 +105,22 @@ function Home() {
                 <a href='https://fontechiara.umbria.it/'>
                   <img src="https://fontechiara.umbria.it/wp-content/uploads/2021/05/fonte-chiara-struttura2-1-1024x537.jpg" />
                   <h3>Agriturismo Fonte Chiara</h3>
-                  <span>Un angolo tranquillo e incontaminato, adagiato sulle  colline umbre.</span>
+                  <p>Un angolo tranquillo e incontaminato, adagiato sulle  colline umbre.</p>
                 </a>
               </li>
             </ul>
             <p className='description'>
               Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate.
+            </p>
+          </div>
+        </section>
+        <section id='travel-section'>
+          <h1>Il nostro viaggio</h1>
+          <div className='card'>
+            <p>
+              Quello che conta veramente é festeggiare questo momento speciale insieme a chi amiamo. La destinazione del nostro viaggio di nozze peró é molto lontana: se volete potete aiutarci a raggiungerla!<br />
+              IBAN IT5840100501613000000003095<br />
+              Intestato a Leonardo Lispi
             </p>
           </div>
         </section>
