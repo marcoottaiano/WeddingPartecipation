@@ -27,7 +27,7 @@ function Header() {
               <a href="#accomodation-section">Pernottamento</a>
             </li>
             <li>
-              <a href="#travel-section">Lista di nozze</a>
+              <a href="#travel-section">Il nostro viaggio</a>
             </li>
             <li>
               <a href="#rsvp-section">RSVP</a>

@@ -215,6 +215,7 @@ body {
       font-weight: bold;
       font-size: 40px;
       letter-spacing: 4px;
+      font-family: $primary-font;
     }
   }
 
@@ -487,10 +488,9 @@ body {
     }
 
     .textarea {
-      height: 100px;
-
       .form-control {
         font-size: 18px;
+        height: 150px;
       }
     }
   }

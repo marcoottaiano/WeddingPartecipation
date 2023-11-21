@@ -97,7 +97,7 @@ function Home() {
           <h1>Come arrivare</h1>
           <hr className='divider' />
           <div className='map-box'>
-            <p>Antica Villa Castelli si trova a pochi minuti dal centro storico di Gubbio.<br /> É facilmente raggiungibile in macchina.</p>
+            <p>Antica Villa Castelli si trova a pochi minuti dal centro storico di Gubbio ed é facilmente raggiungibile in macchina.</p>
             <Map />
           </div>
         </section>
@@ -128,7 +128,7 @@ function Home() {
                 <a href='https://www.tenutadifassia.it/'>
                   <img src="https://www.tenutadifassia.it/wp-content/uploads/elementor/thumbs/agriturismo-tenuta-di-fassia-3-_-q4imo1oluapqolb9w5v2838gropr1wbaxulh10b0jk.jpeg" />
                   <h3>Tenuta di Fassia</h3>
-                  <p>Un viaggio in armonia con la natura, dove apprezzerete pace assoluta e esperienze indimenticabili.</p>
+                  <p>Un viaggio in armonia con la natura, dove apprezzerete pace assoluta ed esperienze indimenticabili.</p>
                 </a>
               </li>
               <li>
@@ -140,7 +140,7 @@ function Home() {
               </li>
             </ul>
             <p className='description'>
-              Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate.
+              Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate. Basterá indicare che siete ospiti al nostro matrimonio al momento della prenotazione.
             </p>
           </div>
         </section>
@@ -148,8 +148,8 @@ function Home() {
           <h1>Il nostro viaggio</h1>
           <div className='card'>
             <p>
-              Quello che conta veramente é festeggiare questo momento speciale insieme a chi amiamo. La destinazione del nostro viaggio di nozze peró é molto lontana: se volete potete aiutarci a raggiungerla!<br />
-              IBAN IT5840100501613000000003095<br />
+              Quello che conta veramente é festeggiare questo momento speciale insieme a chi amiamo.<br />La destinazione del nostro viaggio di nozze, peró, é molto lontana: se volete potete aiutarci a raggiungerla!<br />
+              IBAN IT58K0100501613000000003095<br />
               Intestato a Leonardo Lispi
             </p>
           </div>
@@ -202,11 +202,11 @@ function Home() {
             />
             <Form.Check
               type='radio'
-              label={`Mi dispiace non potró essere presente`}
+              label={`Mi dispiace, non potró essere presente`}
               name='confirmation'
               onChange={() => handleRadioChange('confirmation', false)}
             />
-            <h3 className='mt-3'>Menu:</h3>
+            <h3 className='mt-3'>Menù:</h3>
             <Form.Check
               type='radio'
               label={`Tradizionale`}
