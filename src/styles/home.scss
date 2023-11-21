@@ -461,6 +461,20 @@ body {
     padding: 0 20px;
     font-family: $secondary-font, serif;
 
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .form-check {
+        align-self: start;
+        font-size: 20px;
+      }
+    }
+
     .floating-field {
       width: 100%;
       font-size: 18px;
@@ -477,11 +491,6 @@ body {
       }
     }
 
-    .form-check {
-      align-self: start;
-      font-size: 20px;
-    }
-
     h3 {
       font-family: $primary-font;
       font-size: 30px;
@@ -491,6 +500,26 @@ body {
       .form-control {
         font-size: 18px;
         height: 150px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    h1 {
+      font-size: 70px;
+    }
+
+    form {
+      .input-container {
+        flex-direction: row;
+
+        .form-check {
+          font-size: 25px;
+        }
+      }
+
+      h3 {
+        font-size: 40px;
       }
     }
   }

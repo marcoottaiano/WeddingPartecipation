@@ -157,68 +157,73 @@ function Home() {
         <section id='rsvp-section'>
           <h1>Conferma la tua presenza</h1>
           <hr className='divider' />
-          <form className=''>
-            <FloatingLabel
-              label="Nome"
-              className="floating-field">
-              <Form.Control
-                type="text"
-                placeholder=""
-                name='name'
-                className='text-capitalize'
-                onChange={handleOnChange}
-                value={form.name}
+          <form>
+            <div className='input-container'>
+              <FloatingLabel
+                label="Nome"
+                className="floating-field">
+                <Form.Control
+                  type="text"
+                  placeholder=""
+                  name='name'
+                  className='text-capitalize'
+                  onChange={handleOnChange}
+                  value={form.name}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                label="Cognome"
+                className="floating-field">
+                <Form.Control
+                  type="text"
+                  placeholder=""
+                  name='surname'
+                  className='text-capitalize'
+                  onChange={handleOnChange}
+                  value={form.surname}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                label="Numero di telefono"
+                className="floating-field">
+                <Form.Control
+                  type="number"
+                  placeholder=""
+                  name='phone'
+                  onChange={handleOnChange}
+                  value={form.phone}
+                />
+              </FloatingLabel>
+            </div>
+            <div className='input-container'>
+              <Form.Check
+                type='radio'
+                label={`Ci saró con piacere`}
+                name='confirmation'
+                onChange={() => handleRadioChange('confirmation', true)}
               />
-            </FloatingLabel>
-            <FloatingLabel
-              label="Cognome"
-              className="floating-field">
-              <Form.Control
-                type="text"
-                placeholder=""
-                name='surname'
-                className='text-capitalize'
-                onChange={handleOnChange}
-                value={form.surname}
+              <Form.Check
+                type='radio'
+                label={`Mi dispiace, non potró essere presente`}
+                name='confirmation'
+                onChange={() => handleRadioChange('confirmation', false)}
               />
-            </FloatingLabel>
-            <FloatingLabel
-              label="Numero di telefono"
-              className="floating-field">
-              <Form.Control
-                type="number"
-                placeholder=""
-                name='phone'
-                onChange={handleOnChange}
-                value={form.phone}
-              />
-            </FloatingLabel>
-            <Form.Check
-              type='radio'
-              label={`Ci saró con piacere`}
-              className='mt-3'
-              name='confirmation'
-              onChange={() => handleRadioChange('confirmation', true)}
-            />
-            <Form.Check
-              type='radio'
-              label={`Mi dispiace, non potró essere presente`}
-              name='confirmation'
-              onChange={() => handleRadioChange('confirmation', false)}
-            />
+            </div>
             <h3 className='mt-3'>Menù:</h3>
-            <Form.Check
-              type='radio'
-              label={`Tradizionale`}
-              name='menu'
-              onChange={() => handleRadioChange('menu', true)}
-            />
-            <Form.Check
-              type='radio'
-              label={`Vegetariano`}
-              name='menu'
-              onChange={() => handleRadioChange('menu', false)}
-            />
+            <div className='input-container'>
+              <Form.Check
+                type='radio'
+                label={`Tradizionale`}
+                name='menu'
+                onChange={() => handleRadioChange('menu', true)}
+              />
+              <Form.Check
+                type='radio'
+                label={`Vegetariano`}
+                name='menu'
+                onChange={() => handleRadioChange('menu', false)}
+              />
+            </div>
             <h3 className='mt-3 text-center'>In caso di intolleranze e/o allergie fatecelo sapere nel box di seguito:</h3>
             <FloatingLabel
               label=""
