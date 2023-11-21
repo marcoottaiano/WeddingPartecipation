@@ -5,7 +5,8 @@ import ScrollToTop from 'react-scroll-to-top';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { doc, setDoc } from "firebase/firestore";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Admin from './views/Admin';
 
 
 function App() {
@@ -23,27 +24,11 @@ function App() {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  // async function getCities(db) {
-  //   const citiesCol = collection(db, 'partecipations');
-  //   const citySnapshot = await getDocs(citiesCol);
-  //   const cityList = citySnapshot.docs.map(doc => doc.data());
-  //   console.log(cityList);
-  //   return cityList;
-  // }
+  const [login, setLogin] = useState(false);
 
-
-
-  // getCities(db);
-
-  // async function add(db) {
-  //   const docRef = await addDoc(collection(db, "cities",), {
-  //     name: "Tokyo",
-  //     country: "Japan"
-  //   });
-  //   console.log("Document written with ID: ", docRef.id);
-  // }
-
-
+  function goToLogin() {
+    setLogin(!login);
+  }
 
   return (
     <>
@@ -57,7 +42,7 @@ function App() {
         color: 'white',
         backgroundColor: '#6869AA'
       }} color='white' />
-      <Home />
+      {login ? <Admin db={db} login={goToLogin} /> : <Home db={db} login={goToLogin} />}
     </>
   );
 }

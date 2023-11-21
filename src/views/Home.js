@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Map from '../components/Map'
 import Header from '../components/Header'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
 
-function Home() {
+function Home(props) {
 
   const [form, setForm] = useState({
     name: null,
@@ -14,6 +15,8 @@ function Home() {
     menu: null,
     notes: null
   });
+  const firestore = getFirestore();
+
 
   function handleOnChange(evt) {
     const newState = cloneDeep(form);
@@ -30,6 +33,14 @@ function Home() {
   }
 
   useEffect(() => { console.log(form); }, [form]);
+
+  async function handleOnSubmit(evt) {
+    await addDoc(collection(firestore, "partecipations"), form);
+  }
+
+  function goToLogin() {
+    props.login();
+  }
 
   return (
     <>
@@ -215,13 +226,13 @@ function Home() {
                 type='radio'
                 label={`Tradizionale`}
                 name='menu'
-                onChange={() => handleRadioChange('menu', true)}
+                onChange={() => handleRadioChange('menu', 'Tradizionale')}
               />
               <Form.Check
                 type='radio'
                 label={`Vegetariano`}
                 name='menu'
-                onChange={() => handleRadioChange('menu', false)}
+                onChange={() => handleRadioChange('menu', 'Vegetariano')}
               />
             </div>
             <h3 className='mt-3 text-center'>In caso di intolleranze e/o allergie fatecelo sapere nel box di seguito:</h3>
@@ -244,12 +255,15 @@ function Home() {
               className='button-text mt-4 mb-4'
               size='lg'
               disabled={!form.name || !form.surname || !form.phone || form.confirmation === null || form.menu === null}
-            // onClick={handleOnSubmit}
+              onClick={handleOnSubmit}
             >
               Invia
             </Button>
           </form>
         </section>
+        <div className='admin' onClick={goToLogin}>
+          Admin
+        </div>
       </body>
     </>
 

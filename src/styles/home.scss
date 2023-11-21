@@ -475,21 +475,7 @@ body {
       }
     }
 
-    .floating-field {
-      width: 100%;
-      font-size: 18px;
-      text-align: center;
-      color: black;
 
-      .form-control {
-        border-radius: 20px;
-        border: 1px solid #999999;
-        outline: none;
-        font-size: 25px;
-        height: 70px;
-        padding-left: 20px;
-      }
-    }
 
     h3 {
       font-family: $primary-font;
@@ -523,4 +509,25 @@ body {
       }
     }
   }
+}
+
+.floating-field {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+
+  .form-control {
+    border-radius: 20px;
+    border: 1px solid #999999;
+    outline: none;
+    font-size: 20px;
+    height: 70px;
+    padding-left: 20px;
+  }
+}
+
+.admin {
+  font-family: $secondary-font;
+  cursor: pointer;
 }

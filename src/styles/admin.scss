@@ -1,0 +1,51 @@
+#control-panel {
+  background-image: $carta;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  h1 {
+    font-family: $primary-font;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  #login-section {
+    margin: auto;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+
+    .error-msg {
+      color: red;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 50vw;
+    }
+  }
+
+  #admin-section {
+    margin: auto;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 30px;
+
+    .css-ptkaw2-MuiDataGrid-root {
+      width: 100% !important;
+      background-color: white !important;
+    }
+  }
+}
