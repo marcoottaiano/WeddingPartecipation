@@ -2,6 +2,7 @@ $homepage: url('../assets/images/sfondo.jpg');
 $homepage-vert: url('../assets/images/sfondo-vert.jpg');
 $carta: url('../assets/images/carta.jpg');
 $safari: url('../assets/images/safari.jpg');
+$invito: url('../assets/images/fiori.png');
 
 @font-face {
   font-family: 'AlexBrush-Regular';
@@ -181,9 +182,9 @@ body {
   padding: 0 15px;
   font-family: $secondary-font, serif;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 
-  background-image: url('../assets/images/prova2.jpg');
+  background-image: $invito;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -192,7 +193,7 @@ body {
   .bg-overlay {
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    // background-color: white;
     opacity: 0.4;
     z-index: 2;
     position: absolute;
@@ -290,7 +291,6 @@ body {
 
     .description {
       padding: 0 20px;
-      // text-align: justify;
       font-size: 20px;
 
       span {

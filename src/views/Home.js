@@ -88,7 +88,7 @@ function Home(props) {
           </svg> */}
         </section>
         <section id='invite-section'>
-          <div className='bg-overlay' />
+          {/* <div className='bg-overlay' /> */}
           <div className='text-container'>
             <h1>
               Ci sposiamo!
@@ -117,7 +117,7 @@ function Home(props) {
           <hr className='divider' />
           <div className='accomodation-box'>
             <p className='description'>
-              Per chi ha necessità di pernottamento vi proponiamo le seguenti strutture convezionate
+              Per chi ha necessità di pernottamento vi proponiamo le seguenti strutture convezionate:
             </p>
             <ul>
               <li>
@@ -150,7 +150,7 @@ function Home(props) {
                 </a>
               </li>
             </ul>
-            <p className='description'>
+            <p className='description' style={{ textAlign: 'justify' }}>
               Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate. Basterá indicare che siete ospiti al nostro matrimonio al momento della prenotazione.
             </p>
           </div>
