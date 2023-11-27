@@ -88,16 +88,16 @@ function Home(props) {
           </svg> */}
         </section>
         <section id='invite-section'>
-          {/* <div className='bg-overlay' /> */}
+          <div className='bg-overlay' />
           <div className='text-container'>
             <h1>
               Ci sposiamo!
             </h1>
-            <h2>
+            <h2 className='invite-subtitle'>
               Siamo lieti di invitarvi al nostro matrimonio
               l'8 giugno 2024 presso Antica Villa Castelli a Gubbio.
             </h2>
-            <h2>
+            <h2 className='invite-subtitle'>
               La cerimonia inizierà alle ore 11:30.
               Seguiranno i festeggiamenti!
             </h2>
@@ -151,13 +151,13 @@ function Home(props) {
               </li>
             </ul>
             <p className='description' style={{ textAlign: 'justify' }}>
-              Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate. Basterá indicare che siete ospiti al nostro matrimonio al momento della prenotazione.
+              Vi invitiamo a prenotare il pernottamento <span>entro il 31 Gennaio</span> per assicurarvi le tariffe agevolate.<br />Basterá indicare che siete ospiti al nostro matrimonio al momento della prenotazione.
             </p>
           </div>
         </section>
         <section id='travel-section'>
           <h1>Il nostro viaggio</h1>
-          <div className='card'>
+          <div className='travel-card'>
             <p>
               Quello che conta veramente é festeggiare questo momento speciale insieme a chi amiamo.<br />La destinazione del nostro viaggio di nozze, peró, é molto lontana: se volete potete aiutarci a raggiungerla!<br />
               IBAN IT58K0100501613000000003095<br />
