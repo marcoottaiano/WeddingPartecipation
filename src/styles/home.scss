@@ -182,7 +182,7 @@ body {
   padding: 0 15px;
   font-family: $secondary-font, serif;
   width: 100vw;
-  height: 100vh;
+  height: 700px;
 
   background-image: $invito;
   background-position: bottom;
@@ -216,7 +216,7 @@ body {
 
     .bg-overlay {
       width: 100vw;
-      height: 100vh;
+      height: 700px;
       background-color: white;
       opacity: 0.4;
       z-index: 2;
