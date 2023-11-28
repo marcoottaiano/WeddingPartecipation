@@ -74,6 +74,7 @@ function Admin(props) {
             Partecipanti
           </h1>
           <DataGrid
+            style={{ width: '100%' }}
             rows={model}
             columns={columns}
             pageSizeOptions={[5, 10]}
