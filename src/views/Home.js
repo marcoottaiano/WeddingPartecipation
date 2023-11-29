@@ -4,16 +4,19 @@ import Header from '../components/Header'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
 import { cloneDeep } from 'lodash';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home(props) {
 
   const [form, setForm] = useState({
-    name: null,
-    surname: null,
-    phone: null,
+    name: '',
+    surname: '',
+    phone: '',
     confirmation: null,
-    menu: null,
-    notes: null
+    menu: '',
+    notes: ''
   });
   const firestore = getFirestore();
 
@@ -36,6 +39,33 @@ function Home(props) {
 
   async function handleOnSubmit(evt) {
     await addDoc(collection(firestore, "partecipations"), form);
+    console.log('funziona');
+    setForm({
+      name: '',
+      surname: '',
+      phone: '',
+      confirmation: null,
+      menu: '',
+      notes: ''
+    });
+    toast('Grazie per aver risposto!', {
+      position: "top-center",
+      autoClose: 1500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      closeButton: false,
+      style: {
+        background: '#6869AA',
+        color: 'white',
+        borderRadius: '20px',
+        border: '1px solid #E8E7EA',
+        textAlign: 'center',
+        margin: '10px 10px'
+      },
+    });
   }
 
   function goToLogin() {
@@ -44,6 +74,7 @@ function Home(props) {
 
   return (
     <>
+      <ToastContainer />
       <body>
         <section id='landing-section'>
           <Header />
@@ -212,12 +243,14 @@ function Home(props) {
                 label={`Ci saró con piacere`}
                 name='confirmation'
                 onChange={() => handleRadioChange('confirmation', true)}
+                checked={form.confirmation === true}
               />
               <Form.Check
                 type='radio'
                 label={`Mi dispiace, non potró essere presente`}
                 name='confirmation'
                 onChange={() => handleRadioChange('confirmation', false)}
+                checked={form.confirmation === false}
               />
             </div>
             <h3 className='mt-3'>Menù:</h3>
@@ -227,12 +260,16 @@ function Home(props) {
                 label={`Tradizionale`}
                 name='menu'
                 onChange={() => handleRadioChange('menu', 'Tradizionale')}
+                checked={form.menu === 'Tradizionale'}
+
               />
               <Form.Check
                 type='radio'
                 label={`Vegetariano`}
                 name='menu'
                 onChange={() => handleRadioChange('menu', 'Vegetariano')}
+                checked={form.menu === 'Vegetariano'}
+
               />
             </div>
             <h3 className='mt-3 text-center'>In caso di intolleranze e/o allergie fatecelo sapere nel box di seguito:</h3>
@@ -254,7 +291,7 @@ function Home(props) {
               variant='primary'
               className='button-text mt-4 mb-4'
               size='lg'
-              disabled={!form.name || !form.surname || !form.phone || form.confirmation === null || form.menu === null}
+              disabled={!form.name || !form.surname || !form.phone || form.confirmation === null || !form.menu}
               onClick={handleOnSubmit}
             >
               Invia
