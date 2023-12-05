@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore/lite';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DeleteIcon from '@mui/icons-material/DeleteOutlined';
+import { ToastContainer, toast } from 'react-toastify';
 
 //mui
 import {
   DataGrid,
+  GridActionsCellItem,
 } from '@mui/x-data-grid';
 
 function Admin(props) {
@@ -16,7 +23,24 @@ function Admin(props) {
     { field: 'phone', headerName: 'Numero di telefono', width: 150 },
     { field: 'confirmation', headerName: 'Conferma', width: 100, type: 'boolean' },
     { field: 'menu', headerName: 'Menú', width: 200 },
-    { field: 'notes', headerName: 'Note allergie/intolleranze', flex: 1 }
+    { field: 'notes', headerName: 'Note allergie/intolleranze', flex: 1 },
+    {
+      field: 'actions',
+      type: 'actions',
+      headerName: 'Azioni',
+      width: 100,
+      cellClassName: 'actions',
+      getActions: ({ id }) => {
+        return [
+          <GridActionsCellItem
+            icon={<DeleteIcon />}
+            label="Delete"
+            onClick={openModal.bind(this, id)}
+            color="inherit"
+          />,
+        ];
+      },
+    },
   ];
 
   const [form, setForm] = useState({
@@ -26,10 +50,11 @@ function Admin(props) {
   const [error, setError] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [model, setModel] = useState([]);
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
   // const firestore = getFirestore();
 
   useEffect(() => {
-
     getData();
   }, [])
 
@@ -65,8 +90,39 @@ function Admin(props) {
     props.login();
   }
 
+  function openModal(id, evt) {
+    setDeleteModal(true);
+    setSelectedId(id);
+    console.log(id);
+  }
+
+  async function confirmCancel() {
+    await deleteDoc(doc(props.db, "partecipations", selectedId));
+    toast.success('Eliminazione confermata!', {
+      position: "top-center",
+      autoClose: 1500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      closeButton: false,
+      style: {
+        background: '#6869AA',
+        color: 'white',
+        borderRadius: '20px',
+        border: '1px solid #E8E7EA',
+        textAlign: 'center',
+        margin: '10px 10px'
+      },
+    });
+    getData();
+    setDeleteModal(false);
+  }
+
   return (
     <div id='control-panel'>
+      <ToastContainer />
       {loggedIn ?
         <section id='admin-section'>
           <div className='admin text-decoration-underline' onClick={goToHome}>Indietro</div>
@@ -80,6 +136,24 @@ function Admin(props) {
             pageSizeOptions={[5, 10]}
             columnBuffer={150}
           />
+          <Dialog
+            open={deleteModal}
+            onClose={() => setDeleteModal(false)}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Confermare eliminazione?
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={confirmCancel}>Confermo</Button>
+              <Button onClick={() => setDeleteModal(false)}>
+                Annulla
+              </Button>
+            </DialogActions>
+          </Dialog>
         </section>
         :
         <section id='login-section'>
@@ -122,7 +196,6 @@ function Admin(props) {
             Login
           </Button>
           <div className='admin text-decoration-underline' onClick={goToHome}>Indietro</div>
-
         </section>
       }
     </div>
