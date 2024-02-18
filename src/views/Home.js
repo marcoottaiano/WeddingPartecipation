@@ -265,7 +265,7 @@ function Home(props) {
               />
               <Form.Check
                 type='radio'
-                label={`Vegetariano`}
+                label={`Vegetale`}
                 name='menu'
                 onChange={() => handleRadioChange('menu', 'Vegetariano')}
                 checked={form.menu === 'Vegetariano'}

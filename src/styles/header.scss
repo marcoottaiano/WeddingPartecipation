@@ -49,15 +49,15 @@
   text-decoration: none;
   font-family: $secondary-font;
 
-  &.black {
-    color: black;
-  }
+  // &.black {
+  //   color: black;
+  // }
 }
 
 .nav-elements ul a.active {
   font-weight: 700;
   // position: relative;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 // .nav-elements ul a.active::after {
